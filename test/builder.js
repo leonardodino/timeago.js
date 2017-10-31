@@ -5,10 +5,10 @@ const timeagoLib = require(modulePath),
   DAYS_IN_WEEK = 7;
 
 class TimeagoBuilder {
-  constructor({now, locale}) {
+  constructor(options) {
     /** @private */
-    this.locale = locale || 'en';
-    this.now = new Date(now);
+    this.locale = options.locale || 'en';
+    this.now = new Date(options.now);
   }
 
   /**
