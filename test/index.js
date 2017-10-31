@@ -4,7 +4,7 @@ const test = require('tape');
 const fs = require('fs');
 const testBuilder = require('./builder');
 
-const modulePath = '../' + (process.env.MODULE_PATH || '')
+const modulePath = '../' + (process.env.MODULE_PATH || 'index.js')
 const timeago = require(modulePath)
 
 test('timeago.js should be tested', t => {

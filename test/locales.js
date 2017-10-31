@@ -3,7 +3,7 @@
 const path = require('path');
 const fs = require('fs');
 const test = require('tape');
-const modulePath = '../' + (process.env.MODULE_PATH || '');
+const modulePath = '../' + (process.env.MODULE_PATH || 'index.js');
 const timeago = require(modulePath);
 
 // all the locales code, if missing, please add them.

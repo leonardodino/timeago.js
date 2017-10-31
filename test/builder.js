@@ -1,5 +1,5 @@
 'use strict';
-const modulePath = '../' + (process.env.MODULE_PATH || '')
+const modulePath = '../' + (process.env.MODULE_PATH || 'index.js')
 const timeagoLib = require(modulePath),
   HOURS_IN_MONTH = 24*7*(365/7/12),
   DAYS_IN_WEEK = 7;
