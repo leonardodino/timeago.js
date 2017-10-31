@@ -1,9 +1,11 @@
 {
-  "name": "@leonardodino/timesince",
+  "name": "timesince",
   "version": "0.0.0-alpha",
   "description": "minimalist localized human-readable time diff",
-  "main": "index.js",
+  "main": "dist/timesince.min.js",
   "scripts": {
+    "prepare": "npm run build",
+    "build": "webpack && MODULE_PATH='dist/timesince.min.js' npm run test",
     "test": "node test/locales && node test"
   },
   "repository": {
@@ -17,8 +19,11 @@
   },
   "homepage": "https://github.com/leonardodino/timesince#readme",
   "devDependencies": {
-    "tap-dot": "^1.0.5",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.8.0"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "tape": "^4.8.0",
+    "webpack": "^3.8.1"
   }
 }

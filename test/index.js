@@ -1,9 +1,11 @@
 'use strict';
 const path = require('path');
 const test = require('tape');
-const timeago = require('..');
 const fs = require('fs');
 const testBuilder = require('./builder');
+
+const modulePath = '../' + (process.env.MODULE_PATH || '')
+const timeago = require(modulePath)
 
 test('timeago.js should be tested', t => {
   // locale tests #################################################################
