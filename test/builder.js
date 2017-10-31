@@ -9,6 +9,17 @@ class TimeagoBuilder {
     /** @private */
     this.locale = options.locale || 'en';
     this.now = new Date(options.now);
+    this.options = options.options
+  }
+
+  /**
+   * Sets options params
+   * @param options
+   * @returns {TimeagoBuilder}
+   */
+  setOptions(options) {
+    this.options = options;
+    return this;
   }
 
   /**
@@ -16,7 +27,8 @@ class TimeagoBuilder {
    * @returns {string}
    */
   getFormat(format) {
-    return timeagoLib({locale: this.locale, now: this.now})(format);
+    const config = {locale: this.locale, now: this.now, options: this.options};
+    return timeagoLib(config)(format);
   }
 
   /**
