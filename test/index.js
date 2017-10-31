@@ -42,6 +42,12 @@ test('timeago.js should be tested', t => {
   t.equal(timeago({now: current})(current - 8 * 1000 * 60 * 60 * 24), '1 week ago');
   t.equal(timeago({now: current})(current - 31536000 * 1000 + 1000), '11 months ago');
 
+  // string date works
+  current = '2013-04-11T15:00:00.000Z'
+  t.equal(timeago({now: current})(new Date(current)), 'just now');
+  t.equal(timeago({now: current})(new Date(current) - 8 * 1000 * 60 * 60 * 24), '1 week ago');
+  t.equal(timeago({now: current})(new Date(current) - 31536000 * 1000 + 1000), '11 months ago');
+
   // Date()
   current = new Date('2017-06-23');
   t.equal(timeago({now: current})(current), 'just now');

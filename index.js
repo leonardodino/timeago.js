@@ -32,7 +32,12 @@ const getLocale = (locale = DEFAULT_LOCALE) => {
 }
 
 const getTime = now => {
-	if(typeof now === 'number') return now
+	const type = typeof now
+	if(type === 'number') return now
+	if(type === 'string'){
+		const date = (new Date(now)).getTime()
+		if(isFinite(date)) return date
+	}
 	if(now instanceof Date) return now.getTime()
 	return Date.now()
 }
