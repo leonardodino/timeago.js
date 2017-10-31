@@ -1,0 +1,24 @@
+{
+  "name": "@leonardodino/timesince",
+  "version": "0.0.0-alpha",
+  "description": "minimalist localized human-readable time diff",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/locales && node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardodino/timesince.git"
+  },
+  "author": "Leonardo Dino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leonardodino/timesince/issues"
+  },
+  "homepage": "https://github.com/leonardodino/timesince#readme",
+  "devDependencies": {
+    "tap-dot": "^1.0.5",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
+  }
+}
