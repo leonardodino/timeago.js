@@ -1,6 +1,6 @@
 {
   "name": "timesince",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "minimalist localized human-readable time diff",
   "main": "dist/timesince.min.js",
   "scripts": {
