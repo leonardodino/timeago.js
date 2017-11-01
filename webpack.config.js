@@ -22,6 +22,10 @@ const config = {
       {
         test: /(\.jsx|\.js)$/,
         loader: 'babel-loader',
+        query: {
+          babelrc: false,
+          presets: ['es2015'],
+        },
         exclude: /(node_modules|bower_components)/
       },
     ]
