@@ -2,7 +2,7 @@
   "name": "timesince",
   "version": "0.0.4",
   "description": "minimalist localized human-readable time diff",
-  "main": "dist/main.min.js",
+  "main": "dist/fp.min.js",
   "scripts": {
     "prepare": "npm run build",
     "build": "webpack && MODULE_PATH='dist/main.min.js' npm run test && node test/fp",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leonardodino/main.git"
+    "url": "git+https://github.com/leonardodino/timesince.git"
   },
   "author": "Leonardo Dino",
   "license": "MIT",
