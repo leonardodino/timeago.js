@@ -1,6 +1,6 @@
 {
   "name": "timesince",
-  "version": "0.0.4",
+  "version": "0.1.0-alpha.0",
   "description": "minimalist localized human-readable time diff",
   "main": "dist/fp.min.js",
   "scripts": {
