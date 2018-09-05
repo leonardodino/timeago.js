@@ -38,18 +38,15 @@ const main = {
   plugins: [new UglifyJsPlugin({minimize: true, sourceMap: true})],
 };
 
-const fp = {
-  ...main,
-  output: {
-    ...main.output,
+const fp = Object.assign({}, main, {
+  output: Object.assign({}, main.output, {
     filename: 'fp.min.js',
-  },
-  resolve: {
-    ...main.resolve,
+  }),
+  resolve: Object.assign({}, main.resolve, {
     alias: {
       './locales': path.resolve(__dirname, './empty-array'),
     },
-  }
-}
+  }),
+});
 
 module.exports = [main, fp];
