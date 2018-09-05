@@ -3,16 +3,17 @@
 
 const webpack = require('webpack');
 const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+const NormalModuleReplacementPlugin = webpack.NormalModuleReplacementPlugin;
 const path = require('path');
 
 const libraryName = 'timesince';
 
-const config = {
+const main = {
   entry: __dirname + '/index.js',
   devtool: 'source-map',
   output: {
     path: __dirname + '/dist',
-    filename: 'timesince.min.js',
+    filename: 'main.min.js',
     library: libraryName,
     libraryTarget: 'umd',
     umdNamedDefine: true
@@ -37,4 +38,18 @@ const config = {
   plugins: [new UglifyJsPlugin({minimize: true, sourceMap: true})],
 };
 
-module.exports = config;
+const fp = {
+  ...main,
+  output: {
+    ...main.output,
+    filename: 'fp.min.js',
+  },
+  resolve: {
+    ...main.resolve,
+    alias: {
+      './locales': path.resolve(__dirname, './empty-array'),
+    },
+  }
+}
+
+module.exports = [main, fp];

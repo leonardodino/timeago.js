@@ -28,7 +28,8 @@ const getLocale = (locale = DEFAULT_LOCALE) => {
 	const type = typeof locale
 	if(type === 'function') return locale
 	if(type === 'string' && locales[locale]) return locales[locale]
-	return locales[DEFAULT_LOCALE]
+	if(locales[DEFAULT_LOCALE]) return locales[DEFAULT_LOCALE]
+	throw new Error('locale "'+locale+'" not found!')
 }
 
 const getTime = now => {
